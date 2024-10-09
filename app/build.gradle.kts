@@ -53,6 +53,7 @@ dependencies {
     implementation(libs.logging.interceptor)
     implementation(libs.room.ktx)
     implementation(libs.room.runtime)
+    implementation(libs.kotlinx.coroutines.android)
     kapt(libs.room.compiler)
     kapt(libs.hilt.compiler)
     testImplementation(libs.junit)
