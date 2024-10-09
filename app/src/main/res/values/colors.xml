@@ -2,4 +2,9 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="picton_blue">#00A6FB</color>
+    <color name="alice_blue">#E8F1F2</color>
+    <color name="smoky_black">#0B0A07</color>
+    <color name="mint">#62A87C</color>
+    <color name="blue">#1D4E89</color>
 </resources>

@@ -2,7 +2,9 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.hilt.android)
-    id("kotlin-kapt")
+    id("com.google.devtools.ksp")
+    id("org.jetbrains.kotlin.kapt")
+    id("androidx.room") version "2.6.1"
 }
 
 android {
@@ -39,6 +41,10 @@ android {
     }
 }
 
+room {
+    schemaDirectory("schemas")
+}
+
 dependencies {
 
     implementation(libs.androidx.core.ktx)
@@ -47,14 +53,16 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
     implementation(libs.hilt.android)
-    implementation(libs.retrofit)
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.squareup.retrofit.kotlinx.serialization)
+    implementation(libs.retrofit)
     implementation(libs.logging.interceptor)
     implementation(libs.room.ktx)
     implementation(libs.room.runtime)
     implementation(libs.kotlinx.coroutines.android)
-    kapt(libs.room.compiler)
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.coil)
+    ksp(libs.room.compiler)
     kapt(libs.hilt.compiler)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

@@ -6,12 +6,12 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class ProductApi(
-        @SerialName("name")
+        @SerialName("title")
         val name: String,
-        @SerialName("price")
-        val price: Double)
+        val price: Double,
+        val image: String)
 
 
 fun List<ProductApi>.toProducts(): List<Product> = map { it.toProduct() }
 
-private fun ProductApi.toProduct(): Product = Product(name, price)
+private fun ProductApi.toProduct(): Product = Product(name, price,image)
