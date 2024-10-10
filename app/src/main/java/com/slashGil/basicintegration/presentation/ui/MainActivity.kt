@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
 
     private val viewModel: MainViewModel by viewModels()
 
-    private val productsAdapter by lazy { ProductsAdapter(emptyList()) }
+    private val productsAdapter by lazy { ProductsAdapter() }
 
     private lateinit var binding: ActivityMainBinding
 
@@ -52,8 +52,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun onProductsUiState(uiModel: ProductUiModel) {
         binding.loading.isVisible = uiModel.isLoading
-        productsAdapter.submitList(uiModel.products)
-        productsAdapter.notifyDataSetChanged()
+        productsAdapter.setProducts(uiModel.products)
         if(uiModel.exception != null)
             Toast.makeText(this, uiModel.exception.message, Toast.LENGTH_SHORT).show()
     }

@@ -8,4 +8,4 @@ data class ProductUiModel(val isLoading: Boolean, val products: List<ProductUi>,
 
 fun List<Product>.toProductUi(): List<ProductUi> = map { it.toProductUi() }
 
-private fun Product.toProductUi(): ProductUi = ProductUi(image = image, id = id, name= name, price = "$price")
+private fun Product.toProductUi(): ProductUi = ProductUi(image = image, id = id, name= name, price = "$ $price")
