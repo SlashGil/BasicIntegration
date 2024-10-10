@@ -5,6 +5,7 @@ plugins {
     id("com.google.devtools.ksp")
     id("org.jetbrains.kotlin.kapt")
     id("androidx.room") version "2.6.1"
+    id("org.jetbrains.kotlin.plugin.serialization") version "1.9.24"
 }
 
 android {
@@ -13,7 +14,7 @@ android {
 
     buildFeatures {
         dataBinding = true
-        buildConfig = true
+        viewBinding = true
     }
 
     defaultConfig {

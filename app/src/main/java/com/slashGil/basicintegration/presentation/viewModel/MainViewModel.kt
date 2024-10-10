@@ -29,7 +29,6 @@ class MainViewModel @Inject constructor(private val getProductsUseCase: GetProdu
         emitUiState(isLoading = true)
         viewModelScope.launch(IO) {
             val result = getProductsUseCase.invoke()
-
             withContext(Dispatchers.Main) {
                 when(result) {
                     is Result.Success -> productSuccess(result.data.toProductUi())

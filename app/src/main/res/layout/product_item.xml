@@ -2,6 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <data>
+        <import type="com.slashGil.basicintegration.presentation.binding.BindingAdaptersKt" />
         <variable
             name="product"
             type="com.slashGil.basicintegration.presentation.data.ProductUi" />

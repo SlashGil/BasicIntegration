@@ -13,4 +13,4 @@ data class ProductEntity(@PrimaryKey(autoGenerate = true)
 
 fun List<ProductEntity>.toProducts(): List<Product> = map { it.toProduct() }
 
-private fun ProductEntity.toProduct(): Product = Product(name, price)
+private fun ProductEntity.toProduct(): Product = Product(id, name, price,image)

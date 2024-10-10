@@ -4,8 +4,10 @@ import com.slashGil.basicintegration.domain.model.Product
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
+
 @Serializable
 data class ProductApi(
+        val id: Int,
         @SerialName("title")
         val name: String,
         val price: Double,
@@ -14,4 +16,4 @@ data class ProductApi(
 
 fun List<ProductApi>.toProducts(): List<Product> = map { it.toProduct() }
 
-private fun ProductApi.toProduct(): Product = Product(name, price,image)
+private fun ProductApi.toProduct(): Product = Product(id,name, price,image)

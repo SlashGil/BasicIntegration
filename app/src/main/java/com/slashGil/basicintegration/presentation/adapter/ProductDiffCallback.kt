@@ -5,7 +5,7 @@ import com.slashGil.basicintegration.presentation.data.ProductUi
 
 class ProductDiffCallback : DiffUtil.ItemCallback<ProductUi>() {
     override fun areItemsTheSame(oldItem: ProductUi, newItem: ProductUi): Boolean {
-        return oldItem.name == newItem.name && oldItem.image == newItem.image && oldItem.price == newItem.price
+        return oldItem.id == newItem.id
     }
 
     override fun areContentsTheSame(oldItem: ProductUi, newItem: ProductUi): Boolean {
